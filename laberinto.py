@@ -23,6 +23,21 @@ def recorre_laberinto(laberinto):
         elif movimientos[-1] != 'Derecha' and columna - 1 >= 0 and laberinto[fila][columna - 1] != 'X':
             columna -= 1
             movimientos.append('Izquierda')
+        else:
+            movimientos.pop()
+            if movimientos[-1] == 'Abajo':
+                fila -= 1
+            elif movimientos[-1] == 'Derecha':
+                columna -= 1
+            elif movimientos[-1] == 'Arriba':
+                fila += 1
+            elif movimientos[-1] == 'Izquierda':
+                columna += 1
+    return movimientos
+
+print('Solución: ', recorre_laberinto(laberinto))
+
+
         
 
     
